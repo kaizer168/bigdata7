@@ -1,0 +1,26 @@
+[student4@emr-header-1 homework7]$ hdfs dfs -ls /user/cheechuen
+Found 2 items
+drwxr-x--x   - student4 hadoop          0 2022-03-12 12:56 /user/cheechuen/phone
+drwxr-x--x   - student4 hadoop          0 2022-03-11 23:08 /user/cheechuen/wordcount
+[student4@emr-header-1 homework7]$ hdfs dfs -mkdir /user/cheechuen/invertedindex
+[student4@emr-header-1 homework7]$ vi 0
+[student4@emr-header-1 homework7]$ vi 1
+[student4@emr-header-1 homework7]$ vi 2
+[student4@emr-header-1 homework7]$ cat 0
+it is what it is
+[student4@emr-header-1 homework7]$ cat 1
+what is it
+[student4@emr-header-1 homework7]$ cat 2
+it is a banana
+[student4@emr-header-1 homework7]$ hdfs dfs -put 0 /user/cheechuen/invertedindex
+22/04/17 16:30:06 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[student4@emr-header-1 homework7]$ hdfs dfs -put 1 /user/cheechuen/invertedindex
+22/04/17 16:30:18 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[student4@emr-header-1 homework7]$ hdfs dfs -put 2 /user/cheechuen/invertedindex
+22/04/17 16:30:31 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[student4@emr-header-1 homework7]$ hdfs dfs -ls /user/cheechuen/invertedindex
+Found 3 items
+-rw-r-----   2 student4 hadoop         17 2022-04-17 16:30 /user/cheechuen/invertedindex/0
+-rw-r-----   2 student4 hadoop         11 2022-04-17 16:30 /user/cheechuen/invertedindex/1
+-rw-r-----   2 student4 hadoop         15 2022-04-17 16:30 /user/cheechuen/invertedindex/2
+[student4@emr-header-1 homework7]$
