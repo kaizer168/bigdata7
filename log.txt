@@ -24,3 +24,280 @@ Found 3 items
 -rw-r-----   2 student4 hadoop         11 2022-04-17 16:30 /user/cheechuen/invertedindex/1
 -rw-r-----   2 student4 hadoop         15 2022-04-17 16:30 /user/cheechuen/invertedindex/2
 [student4@emr-header-1 homework7]$
+[student4@emr-header-1 homework7]$ spark-submit --master local --class spark.demo.MyInvertedIndex /home/student4/chee.chuen/homework7/spark.demo-1.0-SNAPSHOT.jar hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex/output
+22/04/17 18:03:18 INFO [main] SparkContext: Running Spark version 3.2.0
+22/04/17 18:03:18 INFO [main] ResourceUtils: ==============================================================
+22/04/17 18:03:18 INFO [main] ResourceUtils: No custom resources configured for spark.driver.
+22/04/17 18:03:18 INFO [main] ResourceUtils: ==============================================================
+22/04/17 18:03:18 INFO [main] SparkContext: Submitted application: MyInvertedIndex
+22/04/17 18:03:18 INFO [main] ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 2145, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+22/04/17 18:03:18 INFO [main] ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+22/04/17 18:03:18 INFO [main] ResourceProfileManager: Added ResourceProfile id: 0
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+22/04/17 18:03:18 INFO [main] SecurityManager: Changing view acls to: student4,*
+22/04/17 18:03:18 INFO [main] SecurityManager: Changing modify acls to: student4
+22/04/17 18:03:18 INFO [main] SecurityManager: Changing view acls groups to:
+22/04/17 18:03:18 INFO [main] SecurityManager: Changing modify acls groups to:
+22/04/17 18:03:18 INFO [main] SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(student4, *); groups with view permissions: Set(); users  with modify permissions: Set(student4); groups with modify permissions: Set()
+22/04/17 18:03:18 INFO [main] Utils: Successfully started service 'sparkDriver' on port 43709.
+22/04/17 18:03:19 INFO [main] SparkEnv: Registering MapOutputTracker
+22/04/17 18:03:19 INFO [main] SparkEnv: Registering BlockManagerMaster
+22/04/17 18:03:19 INFO [main] BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+22/04/17 18:03:19 INFO [main] BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+22/04/17 18:03:19 INFO [main] SparkEnv: Registering BlockManagerMasterHeartbeat
+22/04/17 18:03:19 INFO [main] DiskBlockManager: Created local directory at /tmp/blockmgr-2140aa4e-d3a5-42f9-8dd3-7d9f383e023f
+22/04/17 18:03:19 INFO [main] MemoryStore: MemoryStore started with capacity 912.3 MiB
+22/04/17 18:03:19 INFO [main] SparkEnv: Registering OutputCommitCoordinator
+22/04/17 18:03:19 INFO [main] log: Logging initialized @1739ms to org.sparkproject.jetty.util.log.Slf4jLog
+22/04/17 18:03:19 INFO [main] Server: jetty-9.4.43.v20210629; built: 2021-06-30T11:07:22.254Z; git: 526006ecfa3af7f1a27ef3a288e2bef7ea9dd7e8; jvm 1.8.0_252-b09
+22/04/17 18:03:19 INFO [main] Server: Started @1810ms
+22/04/17 18:03:19 INFO [main] AbstractConnector: Started ServerConnector@4b3e295d{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+22/04/17 18:03:19 INFO [main] Utils: Successfully started service 'SparkUI' on port 4040.
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@184497d1{/jobs,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@1255b1d1{/jobs/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@7c22d4f{/jobs/job,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@47da3952{/jobs/job/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@46e8a539{/stages,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@5fd62371{/stages/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@2b62442c{/stages/stage,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@1e5f4170{/stages/stage/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@6b5966e1{/stages/pool,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@1568159{/stages/pool/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@6f80fafe{/storage,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@f9879ac{/storage/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@5f4d427e{/storage/rdd,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@224b4d61{/storage/rdd/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@303e3593{/environment,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@362a019c{/environment/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@5c48c0c0{/executors,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@674c583e{/executors/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@3f23a3a0{/executors/threadDump,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@5fb97279{/executors/threadDump/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@61861a29{/static,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@ce5a68e{/,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@2f162cc0{/api,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@1cb3ec38{/jobs/job/kill,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@71c5b236{/stages/stage/kill,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] SparkUI: Bound SparkUI to 0.0.0.0, and started at http://emr-header-1.cluster-285604:4040
+22/04/17 18:03:19 INFO [main] SparkContext: Added JAR file:/home/student4/chee.chuen/homework7/spark.demo-1.0-SNAPSHOT.jar at spark://emr-header-1.cluster-285604:43709/jars/spark.demo-1.0-SNAPSHOT.jar with timestamp 1650189798441
+22/04/17 18:03:19 INFO [main] Executor: Starting executor ID driver on host emr-header-1.cluster-285604
+22/04/17 18:03:19 INFO [main] Executor: Fetching spark://emr-header-1.cluster-285604:43709/jars/spark.demo-1.0-SNAPSHOT.jar with timestamp 1650189798441
+22/04/17 18:03:19 INFO [main] TransportClientFactory: Successfully created connection to emr-header-1.cluster-285604/192.168.0.197:43709 after 18 ms (0 ms spent in bootstraps)
+22/04/17 18:03:19 INFO [main] Utils: Fetching spark://emr-header-1.cluster-285604:43709/jars/spark.demo-1.0-SNAPSHOT.jar to /tmp/spark-15da0934-24b3-44a0-a799-e3fa227a2f76/userFiles-b3855083-3aa4-40f4-bcbb-662462cafa22/fetchFileTemp583982331660624671.tmp
+22/04/17 18:03:19 INFO [main] Executor: Adding file:/tmp/spark-15da0934-24b3-44a0-a799-e3fa227a2f76/userFiles-b3855083-3aa4-40f4-bcbb-662462cafa22/spark.demo-1.0-SNAPSHOT.jar to class loader
+22/04/17 18:03:19 INFO [main] Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36859.
+22/04/17 18:03:19 INFO [main] NettyBlockTransferService: Server created on emr-header-1.cluster-285604:36859
+22/04/17 18:03:19 INFO [main] BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+22/04/17 18:03:19 INFO [main] BlockManagerMaster: Registering BlockManager BlockManagerId(driver, emr-header-1.cluster-285604, 36859, None)
+22/04/17 18:03:19 INFO [dispatcher-BlockManagerMaster] BlockManagerMasterEndpoint: Registering block manager emr-header-1.cluster-285604:36859 with 912.3 MiB RAM, BlockManagerId(driver, emr-header-1.cluster-285604, 36859, None)
+22/04/17 18:03:19 INFO [main] BlockManagerMaster: Registered BlockManager BlockManagerId(driver, emr-header-1.cluster-285604, 36859, None)
+22/04/17 18:03:19 INFO [main] BlockManager: external shuffle service port = 7337
+22/04/17 18:03:19 INFO [main] BlockManager: Initialized BlockManager: BlockManagerId(driver, emr-header-1.cluster-285604, 36859, None)
+22/04/17 18:03:19 INFO [main] ContextHandler: Started o.s.j.s.ServletContextHandler@15f193b8{/metrics/json,null,AVAILABLE,@Spark}
+22/04/17 18:03:19 INFO [main] SingleEventLogFileWriter: Logging events to hdfs://emr-header-1.cluster-285604:9000/spark-history/local-1650189799366.inprogress
+22/04/17 18:03:20 INFO [Thread-23] SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+22/04/17 18:03:20 INFO [main] MemoryStore: Block broadcast_0 stored as values in memory (estimated size 398.5 KiB, free 911.9 MiB)
+22/04/17 18:03:20 INFO [main] MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 44.5 KiB, free 911.9 MiB)
+22/04/17 18:03:20 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_0_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 44.5 KiB, free: 912.3 MiB)
+22/04/17 18:03:20 INFO [main] SparkContext: Created broadcast 0 from newAPIHadoopFile at MyInvertedIndex.scala:22
+22/04/17 18:03:20 INFO [main] FileInputFormat: Total input files to process : 3
+22/04/17 18:03:20 INFO [main] GPLNativeCodeLoader: Loaded native gpl library from the embedded binaries
+22/04/17 18:03:20 INFO [main] LzoCodec: Successfully loaded & initialized native-lzo library [hadoop-lzo rev 97184efe294f64a51a4c5c172cbc22146103da53]
+22/04/17 18:03:20 INFO [main] SparkContext: Starting job: sortByKey at MyInvertedIndex.scala:45
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Registering RDD 2 (flatMap at MyInvertedIndex.scala:29) as input to shuffle 0
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Got job 0 (sortByKey at MyInvertedIndex.scala:45) with 3 output partitions
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Final stage: ResultStage 1 (sortByKey at MyInvertedIndex.scala:45)
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[2] at flatMap at MyInvertedIndex.scala:29), which has no missing parents
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_1 stored as values in memory (estimated size 7.1 KiB, free 911.9 MiB)
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 3.9 KiB, free 911.9 MiB)
+22/04/17 18:03:20 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_1_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 3.9 KiB, free: 912.3 MiB)
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1427
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[2] at flatMap at MyInvertedIndex.scala:29) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/04/17 18:03:20 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Adding task set 0.0 with 3 tasks resource profile 0
+22/04/17 18:03:20 INFO [dispatcher-event-loop-15] TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (emr-header-1.cluster-285604, executor driver, partition 0, ANY, 4570 bytes) taskResourceAssignments Map()
+22/04/17 18:03:20 INFO [dispatcher-event-loop-15] TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (emr-header-1.cluster-285604, executor driver, partition 1, ANY, 4570 bytes) taskResourceAssignments Map()
+22/04/17 18:03:20 INFO [dispatcher-event-loop-15] TaskSetManager: Starting task 2.0 in stage 0.0 (TID 2) (emr-header-1.cluster-285604, executor driver, partition 2, ANY, 4570 bytes) taskResourceAssignments Map()
+22/04/17 18:03:20 INFO [Executor task launch worker for task 0.0 in stage 0.0 (TID 0)] Executor: Running task 0.0 in stage 0.0 (TID 0)
+22/04/17 18:03:20 INFO [Executor task launch worker for task 2.0 in stage 0.0 (TID 2)] Executor: Running task 2.0 in stage 0.0 (TID 2)
+22/04/17 18:03:20 INFO [Executor task launch worker for task 1.0 in stage 0.0 (TID 1)] Executor: Running task 1.0 in stage 0.0 (TID 1)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 0.0 (TID 0)] NewHadoopRDD: Input split: hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex/0:0+17
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 0.0 (TID 2)] NewHadoopRDD: Input split: hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex/2:0+15
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 0.0 (TID 1)] NewHadoopRDD: Input split: hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex/1:0+11
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 0.0 (TID 0)] SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 0.0 (TID 2)] SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 0.0 (TID 1)] SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 0.0 (TID 2)] Executor: Finished task 2.0 in stage 0.0 (TID 2). 1221 bytes result sent to driver
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 0.0 (TID 0)] Executor: Finished task 0.0 in stage 0.0 (TID 0). 1178 bytes result sent to driver
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 0.0 (TID 1)] Executor: Finished task 1.0 in stage 0.0 (TID 1). 1178 bytes result sent to driver
+22/04/17 18:03:21 INFO [task-result-getter-2] TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 648 ms on emr-header-1.cluster-285604 (executor driver) (1/3)
+22/04/17 18:03:21 INFO [task-result-getter-0] TaskSetManager: Finished task 2.0 in stage 0.0 (TID 2) in 650 ms on emr-header-1.cluster-285604 (executor driver) (2/3)
+22/04/17 18:03:21 INFO [task-result-getter-1] TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 665 ms on emr-header-1.cluster-285604 (executor driver) (3/3)
+22/04/17 18:03:21 INFO [task-result-getter-1] TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: ShuffleMapStage 0 (flatMap at MyInvertedIndex.scala:29) finished in 0.790 s
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: looking for newly runnable stages
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: running: Set()
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: waiting: Set(ResultStage 1)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: failed: Set()
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[6] at sortByKey at MyInvertedIndex.scala:45), which has no missing parents
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_2 stored as values in memory (estimated size 9.5 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_2_piece0 stored as bytes in memory (estimated size 4.7 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_2_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 4.7 KiB, free: 912.2 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] SparkContext: Created broadcast 2 from broadcast at DAGScheduler.scala:1427
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting 3 missing tasks from ResultStage 1 (MapPartitionsRDD[6] at sortByKey at MyInvertedIndex.scala:45) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Adding task set 1.0 with 3 tasks resource profile 0
+22/04/17 18:03:21 INFO [dispatcher-event-loop-6] TaskSetManager: Starting task 1.0 in stage 1.0 (TID 3) (emr-header-1.cluster-285604, executor driver, partition 1, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-6] TaskSetManager: Starting task 2.0 in stage 1.0 (TID 4) (emr-header-1.cluster-285604, executor driver, partition 2, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-6] TaskSetManager: Starting task 0.0 in stage 1.0 (TID 5) (emr-header-1.cluster-285604, executor driver, partition 0, PROCESS_LOCAL, 4271 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 1.0 (TID 3)] Executor: Running task 1.0 in stage 1.0 (TID 3)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 1.0 (TID 4)] Executor: Running task 2.0 in stage 1.0 (TID 4)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 1.0 (TID 5)] Executor: Running task 0.0 in stage 1.0 (TID 5)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 1.0 (TID 5)] ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 1.0 (TID 4)] ShuffleBlockFetcherIterator: Getting 3 (180.0 B) non-empty blocks including 3 (180.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 1.0 (TID 3)] ShuffleBlockFetcherIterator: Getting 3 (186.0 B) non-empty blocks including 3 (186.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 1.0 (TID 3)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 1.0 (TID 5)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 1.0 (TID 4)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 10 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 1.0 (TID 5)] Executor: Finished task 0.0 in stage 1.0 (TID 5). 1509 bytes result sent to driver
+22/04/17 18:03:21 INFO [task-result-getter-3] TaskSetManager: Finished task 0.0 in stage 1.0 (TID 5) in 138 ms on emr-header-1.cluster-285604 (executor driver) (1/3)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 1.0 (TID 4)] Executor: Finished task 2.0 in stage 1.0 (TID 4). 1523 bytes result sent to driver
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 1.0 (TID 3)] Executor: Finished task 1.0 in stage 1.0 (TID 3). 1525 bytes result sent to driver
+22/04/17 18:03:21 INFO [task-result-getter-2] TaskSetManager: Finished task 2.0 in stage 1.0 (TID 4) in 141 ms on emr-header-1.cluster-285604 (executor driver) (2/3)
+22/04/17 18:03:21 INFO [task-result-getter-0] TaskSetManager: Finished task 1.0 in stage 1.0 (TID 3) in 145 ms on emr-header-1.cluster-285604 (executor driver) (3/3)
+22/04/17 18:03:21 INFO [task-result-getter-0] TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: ResultStage 1 (sortByKey at MyInvertedIndex.scala:45) finished in 0.164 s
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+22/04/17 18:03:21 INFO [main] DAGScheduler: Job 0 finished: sortByKey at MyInvertedIndex.scala:45, took 1.034110 s
+22/04/17 18:03:21 INFO [main] deprecation: mapred.output.dir is deprecated. Instead, use mapreduce.output.fileoutputformat.outputdir
+22/04/17 18:03:21 INFO [main] HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+22/04/17 18:03:21 INFO [main] FileOutputCommitter: File Output Committer Algorithm version is 1
+22/04/17 18:03:21 INFO [main] FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+22/04/17 18:03:21 INFO [main] SparkContext: Starting job: runJob at SparkHadoopWriter.scala:83
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Registering RDD 4 (map at MyInvertedIndex.scala:37) as input to shuffle 2
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Registering RDD 9 (repartition at MyInvertedIndex.scala:46) as input to shuffle 1
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Got job 1 (runJob at SparkHadoopWriter.scala:83) with 1 output partitions
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Final stage: ResultStage 5 (runJob at SparkHadoopWriter.scala:83)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Parents of final stage: List(ShuffleMapStage 4)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Missing parents: List(ShuffleMapStage 4)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting ShuffleMapStage 3 (MapPartitionsRDD[4] at map at MyInvertedIndex.scala:37), which has no missing parents
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_3 stored as values in memory (estimated size 8.5 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_3_piece0 stored as bytes in memory (estimated size 4.5 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_3_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 4.5 KiB, free: 912.2 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] SparkContext: Created broadcast 3 from broadcast at DAGScheduler.scala:1427
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 3 (MapPartitionsRDD[4] at map at MyInvertedIndex.scala:37) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Adding task set 3.0 with 3 tasks resource profile 0
+22/04/17 18:03:21 INFO [dispatcher-event-loop-13] TaskSetManager: Starting task 1.0 in stage 3.0 (TID 6) (emr-header-1.cluster-285604, executor driver, partition 1, NODE_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-13] TaskSetManager: Starting task 2.0 in stage 3.0 (TID 7) (emr-header-1.cluster-285604, executor driver, partition 2, NODE_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-13] TaskSetManager: Starting task 0.0 in stage 3.0 (TID 8) (emr-header-1.cluster-285604, executor driver, partition 0, PROCESS_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 3.0 (TID 6)] Executor: Running task 1.0 in stage 3.0 (TID 6)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 3.0 (TID 7)] Executor: Running task 2.0 in stage 3.0 (TID 7)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 3.0 (TID 8)] Executor: Running task 0.0 in stage 3.0 (TID 8)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 3.0 (TID 6)] ShuffleBlockFetcherIterator: Getting 3 (186.0 B) non-empty blocks including 3 (186.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 3.0 (TID 7)] ShuffleBlockFetcherIterator: Getting 3 (180.0 B) non-empty blocks including 3 (180.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 3.0 (TID 8)] ShuffleBlockFetcherIterator: Getting 0 (0.0 B) non-empty blocks including 0 (0.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 3.0 (TID 6)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 3.0 (TID 7)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 3.0 (TID 8)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 1 ms
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 3.0 (TID 8)] Executor: Finished task 0.0 in stage 3.0 (TID 8). 1350 bytes result sent to driver
+22/04/17 18:03:21 INFO [task-result-getter-1] TaskSetManager: Finished task 0.0 in stage 3.0 (TID 8) in 19 ms on emr-header-1.cluster-285604 (executor driver) (1/3)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 3.0 (TID 6)] Executor: Finished task 1.0 in stage 3.0 (TID 6). 1479 bytes result sent to driver
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 3.0 (TID 7)] Executor: Finished task 2.0 in stage 3.0 (TID 7). 1479 bytes result sent to driver
+22/04/17 18:03:21 INFO [task-result-getter-3] TaskSetManager: Finished task 1.0 in stage 3.0 (TID 6) in 26 ms on emr-header-1.cluster-285604 (executor driver) (2/3)
+22/04/17 18:03:21 INFO [task-result-getter-2] TaskSetManager: Finished task 2.0 in stage 3.0 (TID 7) in 26 ms on emr-header-1.cluster-285604 (executor driver) (3/3)
+22/04/17 18:03:21 INFO [task-result-getter-2] TaskSchedulerImpl: Removed TaskSet 3.0, whose tasks have all completed, from pool
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: ShuffleMapStage 3 (map at MyInvertedIndex.scala:37) finished in 0.044 s
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: looking for newly runnable stages
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: running: Set()
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: waiting: Set(ResultStage 5, ShuffleMapStage 4)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: failed: Set()
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting ShuffleMapStage 4 (MapPartitionsRDD[9] at repartition at MyInvertedIndex.scala:46), which has no missing parents
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_4 stored as values in memory (estimated size 6.4 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_4_piece0 stored as bytes in memory (estimated size 3.6 KiB, free 911.8 MiB)
+22/04/17 18:03:21 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_4_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 3.6 KiB, free: 912.2 MiB)
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] SparkContext: Created broadcast 4 from broadcast at DAGScheduler.scala:1427
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting 3 missing tasks from ShuffleMapStage 4 (MapPartitionsRDD[9] at repartition at MyInvertedIndex.scala:46) (first 15 tasks are for partitions Vector(0, 1, 2))
+22/04/17 18:03:21 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Adding task set 4.0 with 3 tasks resource profile 0
+22/04/17 18:03:21 INFO [dispatcher-event-loop-5] TaskSetManager: Starting task 0.0 in stage 4.0 (TID 9) (emr-header-1.cluster-285604, executor driver, partition 0, NODE_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-5] TaskSetManager: Starting task 1.0 in stage 4.0 (TID 10) (emr-header-1.cluster-285604, executor driver, partition 1, NODE_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [dispatcher-event-loop-5] TaskSetManager: Starting task 2.0 in stage 4.0 (TID 11) (emr-header-1.cluster-285604, executor driver, partition 2, NODE_LOCAL, 4260 bytes) taskResourceAssignments Map()
+22/04/17 18:03:21 INFO [Executor task launch worker for task 0.0 in stage 4.0 (TID 9)] Executor: Running task 0.0 in stage 4.0 (TID 9)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 1.0 in stage 4.0 (TID 10)] Executor: Running task 1.0 in stage 4.0 (TID 10)
+22/04/17 18:03:21 INFO [Executor task launch worker for task 2.0 in stage 4.0 (TID 11)] Executor: Running task 2.0 in stage 4.0 (TID 11)
+22/04/17 18:03:22 INFO [Executor task launch worker for task 2.0 in stage 4.0 (TID 11)] ShuffleBlockFetcherIterator: Getting 1 (207.0 B) non-empty blocks including 1 (207.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:22 INFO [Executor task launch worker for task 1.0 in stage 4.0 (TID 10)] ShuffleBlockFetcherIterator: Getting 2 (456.0 B) non-empty blocks including 2 (456.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 4.0 (TID 9)] ShuffleBlockFetcherIterator: Getting 2 (414.0 B) non-empty blocks including 2 (414.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:22 INFO [Executor task launch worker for task 2.0 in stage 4.0 (TID 11)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+22/04/17 18:03:22 INFO [Executor task launch worker for task 1.0 in stage 4.0 (TID 10)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 4.0 (TID 9)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 4.0 (TID 9)] Executor: Finished task 0.0 in stage 4.0 (TID 9). 1477 bytes result sent to driver
+22/04/17 18:03:22 INFO [Executor task launch worker for task 2.0 in stage 4.0 (TID 11)] Executor: Finished task 2.0 in stage 4.0 (TID 11). 1477 bytes result sent to driver
+22/04/17 18:03:22 INFO [Executor task launch worker for task 1.0 in stage 4.0 (TID 10)] Executor: Finished task 1.0 in stage 4.0 (TID 10). 1477 bytes result sent to driver
+22/04/17 18:03:22 INFO [task-result-getter-0] TaskSetManager: Finished task 0.0 in stage 4.0 (TID 9) in 31 ms on emr-header-1.cluster-285604 (executor driver) (1/3)
+22/04/17 18:03:22 INFO [task-result-getter-1] TaskSetManager: Finished task 2.0 in stage 4.0 (TID 11) in 30 ms on emr-header-1.cluster-285604 (executor driver) (2/3)
+22/04/17 18:03:22 INFO [task-result-getter-3] TaskSetManager: Finished task 1.0 in stage 4.0 (TID 10) in 31 ms on emr-header-1.cluster-285604 (executor driver) (3/3)
+22/04/17 18:03:22 INFO [task-result-getter-3] TaskSchedulerImpl: Removed TaskSet 4.0, whose tasks have all completed, from pool
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: ShuffleMapStage 4 (repartition at MyInvertedIndex.scala:46) finished in 0.047 s
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: looking for newly runnable stages
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: running: Set()
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: waiting: Set(ResultStage 5)
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: failed: Set()
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting ResultStage 5 (MapPartitionsRDD[13] at saveAsTextFile at MyInvertedIndex.scala:46), which has no missing parents
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_5 stored as values in memory (estimated size 124.7 KiB, free 911.7 MiB)
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] MemoryStore: Block broadcast_5_piece0 stored as bytes in memory (estimated size 49.0 KiB, free 911.7 MiB)
+22/04/17 18:03:22 INFO [dispatcher-BlockManagerMaster] BlockManagerInfo: Added broadcast_5_piece0 in memory on emr-header-1.cluster-285604:36859 (size: 49.0 KiB, free: 912.2 MiB)
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] SparkContext: Created broadcast 5 from broadcast at DAGScheduler.scala:1427
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: Submitting 1 missing tasks from ResultStage 5 (MapPartitionsRDD[13] at saveAsTextFile at MyInvertedIndex.scala:46) (first 15 tasks are for partitions Vector(0))
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Adding task set 5.0 with 1 tasks resource profile 0
+22/04/17 18:03:22 INFO [dispatcher-event-loop-12] TaskSetManager: Starting task 0.0 in stage 5.0 (TID 12) (emr-header-1.cluster-285604, executor driver, partition 0, NODE_LOCAL, 4547 bytes) taskResourceAssignments Map()
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] Executor: Running task 0.0 in stage 5.0 (TID 12)
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] HadoopMapRedCommitProtocol: Using output committer class org.apache.hadoop.mapred.FileOutputCommitter
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] FileOutputCommitter: File Output Committer Algorithm version is 1
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] ShuffleBlockFetcherIterator: Getting 3 (240.0 B) non-empty blocks including 3 (240.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] ShuffleBlockFetcherIterator: Started 0 remote fetches in 0 ms
+22/04/17 18:03:22 INFO [Thread-29] SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] FileOutputCommitter: Saved output of task 'attempt_202204171803217857136843188785174_0013_m_000000_0' to hdfs://emr-header-1.cluster-285604:9000/user/cheechuen/invertedindex/output/_temporary/0/task_202204171803217857136843188785174_0013_m_000000
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] SparkHadoopMapRedUtil: attempt_202204171803217857136843188785174_0013_m_000000_0: Committed
+22/04/17 18:03:22 INFO [Executor task launch worker for task 0.0 in stage 5.0 (TID 12)] Executor: Finished task 0.0 in stage 5.0 (TID 12). 1502 bytes result sent to driver
+22/04/17 18:03:22 INFO [task-result-getter-2] TaskSetManager: Finished task 0.0 in stage 5.0 (TID 12) in 66 ms on emr-header-1.cluster-285604 (executor driver) (1/1)
+22/04/17 18:03:22 INFO [task-result-getter-2] TaskSchedulerImpl: Removed TaskSet 5.0, whose tasks have all completed, from pool
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: ResultStage 5 (runJob at SparkHadoopWriter.scala:83) finished in 0.096 s
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+22/04/17 18:03:22 INFO [dag-scheduler-event-loop] TaskSchedulerImpl: Killing all running tasks in stage 5: Stage finished
+22/04/17 18:03:22 INFO [main] DAGScheduler: Job 1 finished: runJob at SparkHadoopWriter.scala:83, took 0.214404 s
+22/04/17 18:03:22 INFO [main] SparkHadoopWriter: Start to commit write Job job_202204171803217857136843188785174_0013.
+22/04/17 18:03:22 INFO [main] SparkHadoopWriter: Write Job job_202204171803217857136843188785174_0013 committed. Elapsed time: 20 ms.
+22/04/17 18:03:22 INFO [shutdown-hook-0] SparkContext: Invoking stop() from shutdown hook
+22/04/17 18:03:22 INFO [shutdown-hook-0] AbstractConnector: Stopped Spark@4b3e295d{HTTP/1.1, (http/1.1)}{0.0.0.0:4040}
+22/04/17 18:03:22 INFO [shutdown-hook-0] SparkUI: Stopped Spark web UI at http://emr-header-1.cluster-285604:4040
+22/04/17 18:03:22 INFO [dispatcher-event-loop-2] MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+22/04/17 18:03:22 INFO [shutdown-hook-0] MemoryStore: MemoryStore cleared
+22/04/17 18:03:22 INFO [shutdown-hook-0] BlockManager: BlockManager stopped
+22/04/17 18:03:22 INFO [shutdown-hook-0] BlockManagerMaster: BlockManagerMaster stopped
+22/04/17 18:03:22 INFO [dispatcher-event-loop-6] OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+22/04/17 18:03:22 INFO [shutdown-hook-0] SparkContext: Successfully stopped SparkContext
+22/04/17 18:03:22 INFO [shutdown-hook-0] ShutdownHookManager: Shutdown hook called
+22/04/17 18:03:22 INFO [shutdown-hook-0] ShutdownHookManager: Deleting directory /tmp/spark-0531c227-6be3-4bbd-98f8-8a04099d71ac
+22/04/17 18:03:22 INFO [shutdown-hook-0] ShutdownHookManager: Deleting directory /tmp/spark-15da0934-24b3-44a0-a799-e3fa227a2f76
+[student4@emr-header-1 homework7]$ hdfs dfs -ls /user/cheechuen/invertedindex
+Found 4 items
+-rw-r-----   2 student4 hadoop         17 2022-04-17 16:30 /user/cheechuen/invertedindex/0
+-rw-r-----   2 student4 hadoop         11 2022-04-17 16:30 /user/cheechuen/invertedindex/1
+-rw-r-----   2 student4 hadoop         15 2022-04-17 16:30 /user/cheechuen/invertedindex/2
+drwxr-x--x   - student4 hadoop          0 2022-04-17 18:03 /user/cheechuen/invertedindex/output
+[student4@emr-header-1 homework7]$ hdfs dfs -ls /user/cheechuen/invertedindex/output
+Found 2 items
+-rw-r-----   2 student4 hadoop          0 2022-04-17 18:03 /user/cheechuen/invertedindex/output/_SUCCESS
+-rw-r-----   2 student4 hadoop        120 2022-04-17 18:03 /user/cheechuen/invertedindex/output/part-00000
+[student4@emr-header-1 homework7]$ hdfs dfs -cat /user/cheechuen/invertedindex/output/part-00000
+22/04/17 18:05:53 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+a:Map(2 -> 1)
+banana:Map(2 -> 1)
+is:Map(2 -> 1, 1 -> 1, 0 -> 2)
+it:Map(2 -> 1, 1 -> 1, 0 -> 2)
+what:Map(1 -> 1, 0 -> 1)
+[student4@emr-header-1 homework7]$
